@@ -1,0 +1,15 @@
+general:
+  front_end:
+    _type: a2a
+    name: "Monitoring Agent"
+    description: "Monitoring Agent for RAN p0nominal Optimization"
+    host: 0.0.0.0
+    port: ${PORT:-9900}
+    version: "1.0.0"
+    max_concurrency: 1
+
+workflow:
+  _type: langgraph_wrapper
+  dependencies:
+    - .
+  graph: main.py:agent

@@ -1,0 +1,11 @@
+checkpoints: true
+remote-agents:
+  - name: Monitoring Agent
+    url: http://localhost:9202
+    protocol: a2a
+  - name: Validation Agent
+    url: http://localhost:9203
+    protocol: a2a
+mcp-servers:
+  - name: Auto-RAN
+    url: http://localhost:9252/mcp

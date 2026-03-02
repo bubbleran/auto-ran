@@ -1,0 +1,4 @@
+checkpoints: false
+mcp-servers:
+  - name: DTrApp
+    url: http://localhost:9251/mcp

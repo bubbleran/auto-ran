@@ -1,0 +1,22 @@
+{
+    "version": "2026_02-bp",
+    "name": "Validation Agent",
+    "description": "Validates the P0 Nominal CM parameter of a RAN Node in a Digital Twin environment for improved UL throughput.",
+    "capabilities": {
+        "pushNotifications": false,
+        "streaming": true
+    },
+    "defaultInputModes": ["text", "text/plain"],
+    "defaultOutputModes": ["text", "text/plain"],
+    "skills": [
+        {
+            "description": "Validate the P0 Nominal CM parameter of a RAN Node in a Digital Twin environment.",
+            "examples": [
+                "Ensure that a P0 Nominal of -83 dBm for RAN Node ID 12345 leads to improved UL throughput."
+            ],
+            "id": "p0-validation-skill",
+            "name": "P0 Validation",
+            "tags": ["p0", "validation", "digital twin"]
+        }
+    ]
+}

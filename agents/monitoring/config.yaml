@@ -1,0 +1,4 @@
+checkpoints: true
+mcp-servers:
+  - name: auto-ran
+    url: http://localhost:9252/mcp

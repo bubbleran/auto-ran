@@ -1,0 +1,17 @@
+[project]
+name = "config-planner-agent"
+version = "2026.2-b"
+description = "Config Planner Agent for P0 Nominal optimization and enforcement"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "br-rapp-sdk==2025.12",
+    "bat-adk>=2026.2",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

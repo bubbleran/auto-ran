@@ -1,0 +1,30 @@
+{
+    "version": "2026_02-bp",
+    "name": "Config Planner Agent",
+    "description": "Config planner for P0 Nominal: calls monitoring and validator agents (A2A), runs optimization inference, and enforces the final p0 to the physical network.",
+    "capabilities": {
+        "pushNotifications": false,
+        "streaming": true
+    },
+    "defaultInputModes": ["text", "text/plain"],
+    "defaultOutputModes": ["text", "text/plain"],
+    "skills": [
+        {
+            "description": "Calls monitoring and validator agents via A2A, proposes candidate p0 values via optimization, validates a candidate in the digital twin, and enforces the final p0 value to the physical network.",
+            "examples": [
+                "Plan a new p0-nominal based on current KPIs and enforce it.",
+                "Given low UL throughput, propose candidate p0 values and validate one in the digital twin."
+            ],
+            "id": "p0-optimization",
+            "name": "P0 Nominal Optimization",
+            "tags": [
+                "p0nominal",
+                "rancontrol",
+                "kpimonitoring",
+                "optimization",
+                "digitaltwin",
+                "self-optimization"
+            ]
+        }
+    ]
+}
