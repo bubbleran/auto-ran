@@ -12,10 +12,7 @@ WELL_KNOWN_P0 = int(os.getenv("WELL_KNOWN_P0", -100))
 # UL throughput in the DT with the default P0 nominal
 WELL_KNOWN_UL = float(os.getenv("WELL_KNOWN_UL", 30200.0))
 
-p0_cache: Dict[int, float] = {
-    WELL_KNOWN_P0: WELL_KNOWN_UL,
-}
-logger.debug(f"cache: {p0_cache}")
+p0_cache: Dict[int, float] = { WELL_KNOWN_P0: WELL_KNOWN_UL }
 
 @tool()
 def read_from_memory(
