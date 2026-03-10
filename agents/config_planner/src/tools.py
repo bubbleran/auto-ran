@@ -28,7 +28,7 @@ def optimize_p0_tool(
     """
     logger.debug(f"[optimize_p0_tool] ul_throughput_current: {ul_throughput_current}, p0_current: {p0_current}")
     deltas = [+20, +24]
-    idx = randint(0, len(deltas))
+    idx = randint(0, len(deltas)-1)
     delta = deltas[idx]
     
     proposal = p0_current + delta
