@@ -1,5 +1,4 @@
 checkpoints: true
 mcp-servers:
-  - name: auto-ran
-    # url: http://193.55.113.25:9900/mcp1/mcp
-    url: http://193.55.113.25:8080/mcp2/mcp
+  - name: Auto-RAN
+    url: http://193.55.113.25:8080/mcp1/mcp

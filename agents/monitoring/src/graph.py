@@ -42,7 +42,7 @@ class MonitoringAgentGraph(AgentGraph):
         config,
     ) -> None:
         # Create an LLM client providing the tools
-        monitoring_list_tools = asyncio.run(config.list_tools(["auto-ran"]))
+        monitoring_list_tools = asyncio.run(config.list_tools(["Auto-RAN"]))
         monitoring_tools = [wrap_mcp_tool(t) for t in monitoring_list_tools if t.name!="set_p0_nominal_tool"]
         self.monitoring_client = MonitoringClient(tools=monitoring_tools)
 
