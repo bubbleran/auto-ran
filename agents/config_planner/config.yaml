@@ -8,4 +8,4 @@ remote-agents:
     protocol: a2a
 mcp-servers:
   - name: Auto-RAN
-    url: http://193.55.113.25:8080/mcp1/mcp
+    url: http://193.55.113.25:8080/tools/mcp

@@ -1,4 +1,4 @@
 checkpoints: false
 mcp-servers:
   - name: DTrApp
-    url: http://193.55.113.25:8080/mcp2/mcp
+    url: http://193.55.113.25:8080/dt-rapp/mcp
