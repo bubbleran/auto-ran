@@ -272,6 +272,7 @@ The complete blueprint cannot be publicly distributed because the full implement
 The version provided in this repository uses a simplified 5G network environment based on **OpenAirInterface** RF simulation (rfsim). This setup allows the agentic workflow and orchestration logic to be demonstrated but does not reproduce the full behavior of a physical RAN deployment. In particular, the RF simulation environment does not fully support P0-Nominal power control adjustments, meaning that configuration changes may not produce observable KPI variations in the simulated network.
 
 A demonstration of the full blueprint execution can be viewed in the following video.
+
 [![Opti-Sphere - Intent-based Autonomous Network Configuration](https://i.ytimg.com/vi_webp/KebvkgVRNqk/maxresdefault.webp)](https://www.youtube.com/watch?v=KebvkgVRNqk)
 
 Organizations interested in the complete system, technical details, or a live demonstration using real hardware are encouraged to [contact BubbleRAN](https://bubbleran.com/contact/) to arrange further discussions or a dedicated session.
