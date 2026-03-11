@@ -1,7 +1,7 @@
 {
   "version": "2026_02-bp",
   "name": "Monitoring Agent",
-  "description": "Autonomous RAN configuration agent that monitors live radio KPIs (current p0nominal, uplink/downlink throughput, SNR, etc.), recommends updated p0nominal values, and enforces new configuration in the RAN.",
+  "description": "Autonomous agent that monitors RAN configuration (P0 Nominal) and KPIs (uplink throughput).",
   "capabilities": {
     "pushNotifications": false,
     "streaming": true
@@ -10,22 +10,32 @@
   "defaultOutputModes": ["text", "text/plain"],
   "skills": [
     {
-      "description": "Fetch current RAN KPIs (p0nominal, UL/DL throughput, SNR, configuration state); analyze performance; propose new p0nominal values to improve link quality and throughput; and apply/enforce the updated p0nominal to the RAN configuration.",
+      "description": "Monitor RAN configuration (P0 Nominal).",
       "examples": [
-        "What is the current p0nominal and uplink SNR for this cell?",
-        "Recommend a new p0nominal to improve uplink performance.",
-        "Throughput is low on the downlink. Should we change p0nominal?",
-        "Apply your recommended p0nominal for this sector.",
-        "Show me KPIs (UL throughput, DL throughput, SNR) and tell me if p0nominal should be updated."
+        "What is the current P0 nominal of the network XYZ?"
       ],
-      "id": "ran-p0-optimization-skill",
-      "name": "RAN p0nominal Optimization and Enforcement",
+      "id": "ran-config-moni-skill",
+      "name": "ConfigMonitoring",
       "tags": [
-        "P0Nominal",
-        "RAN control",
-        "KPI monitoring",
-        "power control",
-        "self-optimization"
+        "configuration",
+        "p0nominal",
+        "monitoring",
+        "rancontrol"
+      ]
+    },
+    {
+      "description": "Monitor RAN KPIs (Uplink throughput).",
+      "examples": [
+        "What is the current uplink throughput of the network XYZ?"
+      ],
+      "id": "ran-kpi-moni-skill",
+      "name": "KPIMonitoring",
+      "tags": [
+        "kpi",
+        "throughput",
+        "uplink",
+        "monitoring",
+        "rancontrol"
       ]
     }
   ]

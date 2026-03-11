@@ -1,7 +1,7 @@
 {
     "version": "2026_02-bp",
     "name": "Config Planner Agent",
-    "description": "Config planner for P0 Nominal: calls monitoring and validator agents (A2A), runs optimization inference, and enforces the final p0 to the physical network.",
+    "description": "Autonomous config planner for P0 Nominal: calls monitoring and validation agents (A2A), runs optimization inference, and enforces the final P0 Nominal to the physical network after validation.",
     "capabilities": {
         "pushNotifications": false,
         "streaming": true
@@ -10,20 +10,36 @@
     "defaultOutputModes": ["text", "text/plain"],
     "skills": [
         {
-            "description": "Calls monitoring and validator agents via A2A, proposes candidate p0 values via optimization, validates a candidate in the digital twin, and enforces the final p0 value to the physical network.",
+            "description": "Forwards requests to the Monitoring Agent to monitor the network configuration and KPIs, adding context to the chat.",
             "examples": [
-                "Plan a new p0-nominal based on current KPIs and enforce it.",
-                "Given low UL throughput, propose candidate p0 values and validate one in the digital twin."
+                "What are the current P0 Nominal and uplink throughput of the XYZ network?",
+                "Can you tell me the uplink throughput of the ABC network?"
             ],
-            "id": "p0-optimization",
-            "name": "P0 Nominal Optimization",
+            "id": "moni-skill",
+            "name": "Monitoring",
+            "tags": [
+                "kpimonitoring",
+                "configmonitoring",
+                "monitoring",
+                "rancontrol"
+            ]
+        },
+        {
+            "description": "Based on the results provided by the Monitoring Agent, propose a new P0 Nominal value and apply it in the network after validating it with the Validation Agent.",
+            "examples": [
+                "Please optimize the P0 Nominal of the network XYZ to increase the uplink throughput."
+            ],
+            "id": "optimization",
+            "name": "Optimization",
             "tags": [
                 "p0nominal",
-                "rancontrol",
-                "kpimonitoring",
+                "uplink",
+                "throughput",
                 "optimization",
-                "digitaltwin",
-                "self-optimization"
+                "monitoring",
+                "validation",
+                "rancontrol",
+                "enforcement"
             ]
         }
     ]

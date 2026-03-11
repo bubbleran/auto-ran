@@ -12,11 +12,17 @@
         {
             "description": "Validate the P0 Nominal CM parameter of a RAN Node in a Digital Twin environment.",
             "examples": [
-                "Ensure that a P0 Nominal of -83 dBm for RAN Node ID 12345 leads to improved UL throughput."
+                "Ensure that a P0 Nominal of -83 dBm for RAN of Network XYZ leads to improved UL throughput."
             ],
             "id": "p0-validation-skill",
-            "name": "P0 Validation",
-            "tags": ["p0", "validation", "digital twin"]
+            "name": "P0Validation",
+            "tags": [
+                "p0",
+                "p0nominal",
+                "validation",
+                "rancontrol",
+                "digitaltwin"
+            ]
         }
     ]
 }
