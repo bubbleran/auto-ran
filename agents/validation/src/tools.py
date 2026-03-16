@@ -22,7 +22,7 @@ def read_from_memory(
     Read the measured Uplink Throughput for the specified P0 Nominal.
     
     Params:
-        - p0_nominal(int): value of the new P0 Nominal for which you want to know the measured throughput.
+        - p0_nominal(int): value of the P0 Nominal for which you want to know the measured throughput.
     
     Result:
         Optional[float]: the measured throughput for the specified P0 Nominal in kbps, or None if not available
