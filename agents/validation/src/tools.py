@@ -10,7 +10,7 @@ logger = create_logger(__name__, "debug")
 # Default P0 nominal of the network
 WELL_KNOWN_P0 = int(os.getenv("WELL_KNOWN_P0", -100))
 # UL throughput in the DT with the default P0 nominal
-WELL_KNOWN_UL = float(os.getenv("WELL_KNOWN_UL", 30200.0))
+WELL_KNOWN_UL = float(os.getenv("WELL_KNOWN_UL", 160000.0))
 
 p0_cache: Dict[int, float] = { WELL_KNOWN_P0: WELL_KNOWN_UL }
 
