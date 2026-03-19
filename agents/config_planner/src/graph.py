@@ -95,7 +95,7 @@ class ConfigPlannerAgentState(AgentState):
 
         # Still working - stream content based on current phase
         if self.enforce_prompt:
-            content = "Enforcing configuration..."
+            content = "Planning next action..."
         elif self.validation_response:
             content = self.validation_response
         elif self.validation_prompt:
@@ -109,7 +109,7 @@ class ConfigPlannerAgentState(AgentState):
         elif self.monitoring_prompt:
             content = self.agent_response_content or "Retrieving KPIs..."
         else:
-            content = "Planning configuration..."
+            content = "Working..."
 
         if len(content) > 200:
             content = content[:200] + "..."
