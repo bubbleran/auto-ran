@@ -1,12 +1,12 @@
 import asyncio
 import os
-from .llm_clients import EnforceClient, OptimizationClient, RouterClient, RouterTask, ValRequestClient
+from .llm_clients import EnforceClient, OptimizationClient, RouterClient, RouterTask, ValRequestClient, NetworkNameInferClient
 from .tools import optimize_p0_tool
 from a2a.types import Message, TextPart
 from bat.agent import AgentGraph, AgentState, AgentTaskResult
 from bat.logging import create_logger
 from bat.prebuilt import ReActLoop, CallAgentNode
-from langchain_core.messages import BaseMessage
+from langchain_core.messages import BaseMessage, HumanMessage
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph import START, END
 from typing import List, Optional, Self
@@ -184,6 +184,7 @@ class ConfigPlannerAgentGraph(AgentGraph):
         )
 
         self.router_client = RouterClient()
+        self.netinfer_client = NetworkNameInferClient()
         self.optimization_client = OptimizationClient(tools=[optimize_p0_tool])
         self.validation_request_client = ValRequestClient()
         self.enforce_client = EnforceClient(tools=enforcement_tools)
@@ -251,11 +252,9 @@ class ConfigPlannerAgentGraph(AgentGraph):
         if state.task == "monitoring":
             state.monitoring_prompt = state.query
         else:
+            network_name = self.netinfer_client.invoke(HumanMessage(state.query))
             state.monitoring_prompt = (
-                "Provide the current P0 Nominal and Uplink Throughput for the network with "
-                "in the user request. Consider the user request only to fetch the name of the network, "
-                "but the requested task is just to monitor P0 Nominal and Uplink Throughput."
-                f"User request: '{state.query}'"
+                f"Provide the current P0 Nominal and Uplink Throughput for the network called {network_name}"
             )
         logger.debug(f"Node `build_monitoring_prompt`: {state.task}, done")
         return state

@@ -14,7 +14,7 @@ class QueryValidationClient(ChatModelClient):
         "for a RAN E2 node and accept ONLY such queries. Also, you should reject any relevant query "
         "that is not specifying a P0 Nominal value to validate."
         "\n\n"
-        "Your answer MUST consist of ONE SINGLE WORD:\n"
+        "Your answer MUST consist of ONE SINGLE WORD with no additional characters / punctuation:\n"
         "- True: if the query is related to P0 Nominal validation and specifies a P0 Nominal value.\n"
         "- False: if the query is not related to P0 Nominal validation or does not specify a P0 Nominal value.\n"
     )

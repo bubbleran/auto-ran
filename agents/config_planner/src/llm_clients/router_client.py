@@ -54,7 +54,7 @@ class RouterClient(ChatModelClient):
         )
         logger.debug(f"Invoking with {len(user_inputs)} user inputs and {len(assistant_outputs)} assistant outputs.")
         response = super().invoke(HumanMessage(content=query))
-        response_content = response.content.lower().strip()
+        response_content = response.content.lower().strip().split("</think>")[-1].strip()
         # remove leading and trailing quotes
         if response_content.startswith('"') and response_content.endswith('"') or \
            response_content.startswith("'") and response_content.endswith("'"):

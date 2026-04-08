@@ -39,6 +39,6 @@ class ValRequestClient(ChatModelClient):
             opt_result=optimization_result,
         )
         response = super().invoke(HumanMessage(content=query))
-        response_content = response.content.lower().strip()
+        response_content = response.content.lower().strip().split("</think>")[-1].strip()
 
         return response_content
