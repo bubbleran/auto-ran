@@ -7,6 +7,12 @@ general:
     port: ${PORT:-9900}
     version: "1.0.0"
     max_concurrency: 1
+  telemetry:
+    tracing:
+      phoenix:
+        _type: phoenix
+        endpoint: http://localhost:6006/v1/traces
+        project: monitoring
 
 workflow:
   _type: langgraph_wrapper

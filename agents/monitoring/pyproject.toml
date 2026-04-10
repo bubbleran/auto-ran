@@ -11,6 +11,7 @@ dependencies = [
     "nvidia-nat-a2a==1.4.1",
     "nvidia-nat-langchain==1.4.1",
     "nvidia-nat-mcp==1.4.1",
+    "nvidia-nat[phoenix]==1.4.1",
 ]
 
 [tool.hatch.build.targets.wheel]

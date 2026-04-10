@@ -1,4 +1,9 @@
 services:
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    ports:
+      - "6006:6006"
+
   config-planner-agent:
     build: ./agents/config_planner
     image: config-planner-agent:bp
@@ -17,7 +22,13 @@ services:
       - ./agents/monitoring/.env
     network_mode: "host"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9202/.well-known/agent-card.json"]
+      test:
+        [
+          "CMD",
+          "curl",
+          "-f",
+          "http://localhost:9202/.well-known/agent-card.json",
+        ]
       interval: 5s
       timeout: 2s
       retries: 5
@@ -28,7 +39,13 @@ services:
       - ./agents/validation/.env
     network_mode: "host"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9203/.well-known/agent-card.json"]
+      test:
+        [
+          "CMD",
+          "curl",
+          "-f",
+          "http://localhost:9203/.well-known/agent-card.json",
+        ]
       interval: 5s
       timeout: 2s
       retries: 5
