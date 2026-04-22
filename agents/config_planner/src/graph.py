@@ -252,7 +252,7 @@ class ConfigPlannerAgentGraph(AgentGraph):
         if state.task == "monitoring":
             state.monitoring_prompt = state.query
         else:
-            network_name = self.netinfer_client.invoke(HumanMessage(state.query))
+            network_name = self.netinfer_client.invoke(HumanMessage(state.query)).content
             state.monitoring_prompt = (
                 f"Provide the current P0 Nominal and Uplink Throughput for the network called {network_name}"
             )
