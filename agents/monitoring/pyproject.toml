@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "a2a-sdk<1.0.0",
     "bat-adk==2026.2.26",
     "br-rapp-sdk==2025.12",
     "nvidia-nat==1.4.1",
