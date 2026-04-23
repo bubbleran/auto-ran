@@ -13,6 +13,12 @@ general:
         _type: phoenix
         endpoint: http://localhost:6006/v1/traces
         project: monitoring
+      local_file:   
+        _type: file  
+        output_path: ./traces/traces.jsonl
+        project: monitoring
+        level: DEBUG
+
 
 workflow:
   _type: langgraph_wrapper
