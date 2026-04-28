@@ -10,7 +10,7 @@ logger = create_logger(__name__, "debug")
 #       You should replace the code of this function with a real
 #       optimization algorithm.
 
-@tool("optimize_p0")
+@tool(name_or_callable="optimize_p0")
 def optimize_p0_tool(
     ul_throughput_current: float, # not used
     p0_current: int,

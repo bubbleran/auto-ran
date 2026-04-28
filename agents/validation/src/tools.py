@@ -14,7 +14,7 @@ WELL_KNOWN_UL = float(os.getenv("WELL_KNOWN_UL", 160000.0))
 
 p0_cache: Dict[int, float] = { WELL_KNOWN_P0: WELL_KNOWN_UL }
 
-@tool()
+@tool(name_or_callable="read_from_memory")
 def read_from_memory(
     p0_nominal: int,
 ) -> Optional[float]:
@@ -30,7 +30,7 @@ def read_from_memory(
     global p0_cache
     return p0_cache.get(p0_nominal)
 
-@tool()
+@tool(name_or_callable="write_to_memory")
 def write_to_memory(
     p0_nominal: int,
     ul_throuhgput: float,
