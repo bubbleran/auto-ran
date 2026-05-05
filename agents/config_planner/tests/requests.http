@@ -1,0 +1,30 @@
+GET http://localhost:9201/.well-known/agent.json
+
+###
+
+POST http://localhost:9201
+Content-Type: application/json
+
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "message/stream",
+  "params": {
+    "configuration": {
+      "accepted_output_modes": [
+        "text"
+      ]
+    },
+    "message": {
+      "context_id": "8f01f3d172cd4396a0e535ae8aec6680",
+      "message_id": "1",
+      "role": "user",
+      "parts": [
+        {
+          "type": "text",
+          "text": "Please propose a new P0 nominal for the 'colsstb01' network."
+        }
+      ]
+    }
+  }
+}

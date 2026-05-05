@@ -1,0 +1,46 @@
+{
+    "version": "2026_02-bp",
+    "name": "Config Planner Agent",
+    "description": "Autonomous config planner for P0 Nominal: calls monitoring and validation agents (A2A), runs optimization inference, and enforces the final P0 Nominal to the physical network after validation.",
+    "capabilities": {
+        "pushNotifications": false,
+        "streaming": true
+    },
+    "defaultInputModes": ["text", "text/plain"],
+    "defaultOutputModes": ["text", "text/plain"],
+    "skills": [
+        {
+            "description": "Forwards requests to the Monitoring Agent to monitor the network configuration and KPIs, adding context to the chat.",
+            "examples": [
+                "What are the current P0 Nominal and uplink throughput of the XYZ network?",
+                "Can you tell me the uplink throughput of the ABC network?"
+            ],
+            "id": "moni-skill",
+            "name": "Monitoring",
+            "tags": [
+                "kpimonitoring",
+                "configmonitoring",
+                "monitoring",
+                "rancontrol"
+            ]
+        },
+        {
+            "description": "Based on the results provided by the Monitoring Agent, propose a new P0 Nominal value and apply it in the network after validating it with the Validation Agent.",
+            "examples": [
+                "Please optimize the P0 Nominal of the network XYZ to increase the uplink throughput."
+            ],
+            "id": "optimization",
+            "name": "Optimization",
+            "tags": [
+                "p0nominal",
+                "uplink",
+                "throughput",
+                "optimization",
+                "monitoring",
+                "validation",
+                "rancontrol",
+                "enforcement"
+            ]
+        }
+    ]
+}

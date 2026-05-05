@@ -1,0 +1,42 @@
+{
+  "version": "2026_02-bp",
+  "name": "Monitoring Agent",
+  "description": "Autonomous agent that monitors RAN configuration (P0 Nominal) and KPIs (uplink throughput).",
+  "capabilities": {
+    "pushNotifications": false,
+    "streaming": true
+  },
+  "defaultInputModes": ["text", "text/plain"],
+  "defaultOutputModes": ["text", "text/plain"],
+  "skills": [
+    {
+      "description": "Monitor RAN configuration (P0 Nominal).",
+      "examples": [
+        "What is the current P0 nominal of the network XYZ?"
+      ],
+      "id": "ran-config-moni-skill",
+      "name": "ConfigMonitoring",
+      "tags": [
+        "configuration",
+        "p0nominal",
+        "monitoring",
+        "rancontrol"
+      ]
+    },
+    {
+      "description": "Monitor RAN KPIs (Uplink throughput).",
+      "examples": [
+        "What is the current uplink throughput of the network XYZ?"
+      ],
+      "id": "ran-kpi-moni-skill",
+      "name": "KPIMonitoring",
+      "tags": [
+        "kpi",
+        "throughput",
+        "uplink",
+        "monitoring",
+        "rancontrol"
+      ]
+    }
+  ]
+}

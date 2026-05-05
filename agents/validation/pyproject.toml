@@ -1,0 +1,10 @@
+[project]
+name = "validation-agent"
+version = "2026.2-b"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "a2a-sdk<1.0.0",
+    "bat-adk==2026.2.26",
+]

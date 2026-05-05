@@ -1,0 +1,41 @@
+services:
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    ports:
+      - "6006:6006"
+
+  config-planner-agent:
+    build: ./agents/config_planner
+    image: config-planner-agent:bp
+    env_file:
+      - ./agents/config_planner/.env
+    network_mode: "host"
+    depends_on:
+      validation-agent:
+        condition: service_healthy
+      monitoring-agent:
+        condition: service_healthy
+  monitoring-agent:
+    build: ./agents/monitoring
+    image: monitoring-agent:bp
+    env_file:
+      - ./agents/monitoring/.env
+    network_mode: "host"
+    volumes:
+      - ./traces:/app/agent/traces
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9202/.well-known/agent-card.json" ]
+      interval: 5s
+      timeout: 2s
+      retries: 5
+  validation-agent:
+    build: ./agents/validation
+    image: validation-agent:bp
+    env_file:
+      - ./agents/validation/.env
+    network_mode: "host"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9203/.well-known/agent-card.json" ]
+      interval: 5s
+      timeout: 2s
+      retries: 5
